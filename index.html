@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Finance Pal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    :root {
+      --blue: #2c8ef8;
+      --indigo: #727cf5;
+      --purple: #6b5eae;
+      --pink: #ff679b;
+      --red: #fa5c7c;
+      --orange: #fd7e14;
+      --yellow: #ffbc00;
+      --green: #0acf97;
+      --teal: #02a8b5;
+      --cyan: #39afd1;
+      --white: #fff;
+      --gray: #8391a2;
+      --gray-dark: #e3eaef;
+      --primary: #727cf5;
+      --secondary: #464f5b;
+      --success: #0acf97;
+      --info: #39afd1;
+      --warning: #ffbc00;
+      --danger: #fa5c7c;
+      --light: #dee2e6;
+      --dark: #f1f1f1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--dark);
+      color: var(--secondary);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--indigo));
+      color: var(--white);
+      text-align: center;
+      padding: 4rem 1rem 3rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+    }
+
+    header p {
+      font-size: 1.25rem;
+      margin: 1rem 0 2rem;
+      opacity: 0.9;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: var(--success);
+      color: var(--white);
+      text-decoration: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: background-color 0.3s ease, transform 0.2s;
+    }
+
+    .cta-button:hover {
+      background-color: var(--green);
+      transform: scale(1.05);
+    }
+
+    section.features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 4rem 1rem;
+      background-color: var(--light);
+    }
+
+    .feature {
+      background-color: var(--white);
+      border-radius: 16px;
+      padding: 2rem;
+      width: 300px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.3s ease, opacity 0.5s ease;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .feature.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .feature-icon {
+      margin-bottom: 1rem;
+    }
+
+    .feature-icon svg {
+      width: 40px;
+      height: 40px;
+      stroke-width: 1.5px;
+    }
+
+    .feature h3 {
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+
+    .feature p {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: var(--gray-dark);
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      .feature {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Finance Pal</h1>
+    <p>Seu assistente financeiro para acompanhar cotações e variações do dia</p>
+    <a href="https://lmansoldo.github.io/finance-pal" class="cta-button">Comece Agora</a>
+  </header>
+
+  <section class="features">
+    <div class="feature">
+      <div class="feature-icon" data-lucide="dollar-sign"></div>
+      <h3>Moedas</h3>
+      <p>Acompanhe as principais taxas de câmbio e variações de moedas estrangeiras em tempo real.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon" data-lucide="line-chart"></div>
+      <h3>Ações</h3>
+      <p>Veja o desempenho das principais ações da bolsa com gráficos e variações diárias.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon" data-lucide="bitcoin"></div>
+      <h3>Criptomoedas</h3>
+      <p>Fique por dentro dos preços, tendências e variações das criptos mais populares.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Finance Pal. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.feature').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
