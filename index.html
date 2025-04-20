@@ -8,27 +8,27 @@
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <style>
     :root {
-      --blue: #2c8ef8;
-      --indigo: #727cf5;
-      --purple: #6b5eae;
-      --pink: #ff679b;
-      --red: #fa5c7c;
-      --orange: #fd7e14;
-      --yellow: #ffbc00;
-      --green: #0acf97;
-      --teal: #02a8b5;
-      --cyan: #39afd1;
-      --white: #fff;
-      --gray: #8391a2;
-      --gray-dark: #e3eaef;
       --primary: #727cf5;
+      --primary-100: #f3f3fe;
+      --primary-500: #727cf5;
+      --primary-700: #4147c9;
+
       --secondary: #464f5b;
+      --secondary-100: #f2f3f5;
+      --secondary-500: #464f5b;
+      --secondary-800: #222529;
+
       --success: #0acf97;
+      --success-600: #09b383;
+
       --info: #39afd1;
+
       --warning: #ffbc00;
       --danger: #fa5c7c;
-      --light: #dee2e6;
-      --dark: #f1f1f1;
+
+      --light: #f2f3f5;
+      --white: #fff;
+      --gray: #7d8592;
     }
 
     * {
@@ -43,13 +43,13 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--dark);
+      background-color: var(--secondary-100);
       color: var(--secondary);
       line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(135deg, var(--primary), var(--indigo));
+      background: linear-gradient(135deg, var(--primary), var(--primary-700));
       color: var(--white);
       text-align: center;
       padding: 4rem 1rem 3rem;
@@ -79,7 +79,7 @@
     }
 
     .cta-button:hover {
-      background-color: var(--green);
+      background-color: var(--success-600);
       transform: scale(1.05);
     }
 
@@ -89,7 +89,7 @@
       justify-content: center;
       gap: 2rem;
       padding: 4rem 1rem;
-      background-color: rgb(22 24 27 / var(--tw-bg-opacity, 1));
+      background-color: var(--light);
     }
 
     .feature {
@@ -117,6 +117,7 @@
       width: 40px;
       height: 40px;
       stroke-width: 1.5px;
+      color: var(--primary);
     }
 
     .feature h3 {
@@ -133,7 +134,7 @@
     footer {
       text-align: center;
       padding: 2rem;
-      background-color: var(--gray-dark);
+      background-color: var(--secondary-100);
       color: var(--gray);
       font-size: 0.9rem;
     }
